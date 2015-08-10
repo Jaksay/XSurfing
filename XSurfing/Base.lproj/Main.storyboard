@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ykw-cw-leA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="s4D-d6-cO8">
+            <objects>
+                <navigationController id="ykw-cw-leA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="COr-tq-JH5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="NGT-wO-6lz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="fI1-s4-47e" kind="relationship" relationship="rootViewController" id="2yC-iS-LOe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6q-L3-TIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-125.86666666666666" y="35.026666666666664"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="UkY-R7-W8A">
+            <objects>
+                <tableViewController id="fI1-s4-47e" customClass="ViewController" customModule="XSurfing" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vMR-rQ-SS2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="webCell" id="d1B-gX-aXO">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d1B-gX-aXO" id="gh0-52-L8H">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UaU-Xl-Ban">
+                                            <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UaU-Xl-Ban" firstAttribute="top" secondItem="gh0-52-L8H" secondAttribute="top" constant="43" id="1wl-zc-oAM"/>
+                                        <constraint firstAttribute="bottom" secondItem="UaU-Xl-Ban" secondAttribute="bottom" id="IPw-yF-pas"/>
+                                        <constraint firstItem="UaU-Xl-Ban" firstAttribute="leading" secondItem="gh0-52-L8H" secondAttribute="leading" id="p6W-Qm-PYx"/>
+                                        <constraint firstAttribute="trailing" secondItem="UaU-Xl-Ban" secondAttribute="trailing" id="vHI-Bw-4wD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fI1-s4-47e" id="8vA-ZT-XbH"/>
+                            <outlet property="delegate" destination="fI1-s4-47e" id="5z8-hm-lcz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="6A9-ix-6Og"/>
+                    <connections>
+                        <segue destination="Zo3-6c-qxQ" kind="push" identifier="showDetailWebContent" id="qaS-TD-pJN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LvS-wP-h9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="35"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="sXd-Qv-GTd">
+            <objects>
+                <viewController id="Zo3-6c-qxQ" customClass="WebViewController" customModule="XSurfing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qC6-Vg-eQT"/>
+                        <viewControllerLayoutGuide type="bottom" id="7re-8O-5Xe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bMH-Cs-8dy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxu-jM-o5C">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gxu-jM-o5C" secondAttribute="trailing" id="6Pe-EO-BUf"/>
+                            <constraint firstItem="gxu-jM-o5C" firstAttribute="top" secondItem="bMH-Cs-8dy" secondAttribute="top" id="NX2-Lw-e4g"/>
+                            <constraint firstItem="7re-8O-5Xe" firstAttribute="top" secondItem="gxu-jM-o5C" secondAttribute="bottom" id="PTt-sI-2uj"/>
+                            <constraint firstItem="gxu-jM-o5C" firstAttribute="leading" secondItem="bMH-Cs-8dy" secondAttribute="leading" id="We0-vM-5Z2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CGj-tc-AAH"/>
+                    <connections>
+                        <outlet property="webView" destination="gxu-jM-o5C" id="Nag-hn-1QJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLT-bu-8EB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="35"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
